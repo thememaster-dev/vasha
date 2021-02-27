@@ -1,11 +1,16 @@
 {
   "name": "vasha",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "license": "MIT",
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "dev:client": "lerna exec --stream --scope=@vasha/client -- yarn start",
+    "dev:admin": "lerna exec --stream --scope=@vasha/admin -- yarn start"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged",
